@@ -1,22 +1,18 @@
 public class Heranca00 {
     public static void main(String[] args) {
         System.out.println("funfeia!");
-        Cachorro fred = new Cachorro();
-        fred.fazBarulho();
-        fred.descrever();
-
-        Gato minerin = new Gato();
-        minerin.fazBarulho();
-        minerin.descrever();
-
-        PitBull altair = new PitBull();
-        altair.fazBarulho();
-        altair.descrever();
-       
+        Cachorro fred = new Cachorro("fred", "preto", " xitsu", "auauau", 10);
+        System.out.println( fred);
+        Cachorro cleber = new Cachorro("cleber", "caramelo", "rotwaillwer", "wuuf", 8);
+        System.out.println ( cleber);
+        Cachorro kayky = new Cachorro("kayky", "azul", "xiuauaua", "uiii", 2);
+        System.out.println ( kayky);
+        Cachorro perro = new Cachorro("perro", "branco", "lulu", "aiaiai", 1);
+        System.out.println ( perro);
+  
     }
 
 }
-
 abstract class Animal {
     String nome;
     String onomatopeia; // representacao sonora emitida pelo animal
@@ -24,48 +20,22 @@ abstract class Animal {
     Integer idade;
     String raca;
 
-    public void fazBarulho() {
-        System.out.println(this.onomatopeia);
+    public String toString (){
+        return "nome: " + this.nome + "\n "+ "raça: " + this.raca + "\n" +  "cor: "  + this.cor + "\n" + " idade:" + this.idade + "\n" + "som: " + this.onomatopeia;
+        
     }
-
-    public void descrever() {
-        System.out.println("Raça: " + this.raca);
-        System.out.println("Idade: " + this.idade);
-        System.out.println("Cor: " + this.cor);
-        System.out.println("Nome: "+ this.nome);
-
-    }
-
 }
 
 class Cachorro extends Animal {
-    Cachorro() { // metodo construtor, o que define o cão !
-        this.nome = "fred";
-        this.onomatopeia = "au au";
-        this.raca = "vira-lata";
-        this.cor = "Caramelo";
-        this.idade = 2;
+    Cachorro( String nome, String cor, String raca, String  onomatopeia, Integer idade ) { // metodo construtor, o que define o cão !
+        this.nome = nome;
+        this.onomatopeia = onomatopeia;
+        this.raca = raca;
+        this.cor = cor;
+        this.idade = idade;
     }
 }
 
-class PitBull extends Animal{
-    PitBull() { // metodo construtor, o que define o cão !
-        this.nome = "Altair";
-        this.onomatopeia = "auau too";
-        this.raca = "pitBull";
-        this.cor = "preto";
-        this.idade = 10;
-    }   
 
-}
 
-class Gato extends Animal {
-    public Gato() { //metodo construtor, que define o gato !
-        this.onomatopeia = "miar";
-        this.raca = "de-rua";
-        this.cor = "Malhado";
-        this.idade = 3;
-
-    }
-}
 
