@@ -9,6 +9,8 @@ public class Heranca00 {
         System.out.println ( kayky);
         Cachorro perro = new Cachorro("perro", "branco", "lulu", "aiaiai", 1);
         System.out.println ( perro);
+        Gato cruel = new Gato ("cruel", "mestiço", "persa", "miaau", 2);
+        System.out.println( cruel);
   
     }
 
@@ -27,12 +29,21 @@ abstract class Animal {
 }
 
 class Cachorro extends Animal {
-    Cachorro( String nome, String cor, String raca, String  onomatopeia, Integer idade ) { // metodo construtor, o que define o cão !
+        Cachorro( String nome, String cor, String raca, String  onomatopeia, Integer idade ) { // metodo construtor, o que define o cão !
         this.nome = nome;
         this.onomatopeia = onomatopeia;
         this.raca = raca;
         this.cor = cor;
         this.idade = idade;
+        }
+    }
+class Gato extends Animal {
+           Gato  ( String nome, String cor, String raca, String  onomatopeia, Integer idade ) { // metodo construtor, o que define o cão !
+                this.nome = nome;
+                this.onomatopeia = onomatopeia;
+                this.raca = raca;
+                this.cor = cor;
+                this.idade = idade;
     }
 }
 
