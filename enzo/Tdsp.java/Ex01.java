@@ -10,7 +10,7 @@ public class Ex01{
          while (numero >= 0){
             soma += numero;
             numero = ler.nextInt();
-        }   i++;
+        }       i++;
          
      media = soma/i;
         System.out.println(media);
