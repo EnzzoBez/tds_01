@@ -7,11 +7,10 @@ public class Fibonacci {
         System.out.println("Digite o número até o qual deseja gerar a série de Fibonacci:");
         int limite = scanner.nextInt();
         
-        System.out.println("Série de Fibonacci até " + limite + ":");
+        System.out.println("Numeros de Fibonacci até " + limite + ":");
         for (int i = 0; fibonacci(i) <= limite; i++) {
             System.out.print(fibonacci(i) + " ");
         }
-        
         scanner.close();
     }
     
