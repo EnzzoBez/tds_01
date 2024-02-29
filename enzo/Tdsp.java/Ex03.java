@@ -8,11 +8,10 @@ public class Ex03{
         int numero = j.nextInt();
         ArrayList <Integer> vetor = new ArrayList<>();
 
-        System.out.println(" * ");
+        System.out.println(" Seus divisores são:  ");
         for(int contador = 1; contador <= numero; contador++){
             if(numero % contador == 0){
                 vetor.add(contador);     
-
             }
            
 
