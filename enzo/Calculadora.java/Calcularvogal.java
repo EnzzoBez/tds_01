@@ -18,3 +18,14 @@ public class Calcularvogal{
     System.out.println(cont);
     }
 }
+
+
+
+
+
+
+public static void main (String[] args){
+      Scanner j = new scanner 
+
+
+}
