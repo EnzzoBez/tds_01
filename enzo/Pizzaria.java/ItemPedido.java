@@ -1,4 +1,4 @@
-public class ItemDoPedido {
+public class ItemPedido {
     private String sabor;
     private double valor;
     private String tipo;

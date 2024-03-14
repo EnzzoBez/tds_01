@@ -7,7 +7,7 @@ public class Pizzaria {
         Scanner scanner = new Scanner(System.in);        
 
         Pedido pedido = new Pedido();
-        ItemDoPedido item = new ItemDoPedido();
+        ItemPedido item = new ItemPedido();
 
         System.out.print("Informe o tipo de pizza: ");
         item.setTipo(scanner.nextLine());
@@ -15,14 +15,16 @@ public class Pizzaria {
         item.setSabor(scanner.nextLine());
         System.out.print("Informe o valor da pizza: ");
         item.setValor(scanner.nextDouble());
+        scanner.nextLine();
 
         System.out.print("Nome do cliente: ");
-        pedido.setCliente(scanner.next());
+        pedido.setCliente(scanner.nextLine());
 
         System.out.print("Taxa de entrega: ");
         pedido.setTxEntrega(scanner.nextDouble());
+        scanner.nextLine();
 
-        pedido.adicionarItemDoPedido(item);
+        pedido.adicionarItemPedido(item);
         pedido.imprimir();
     }
 }
