@@ -18,6 +18,10 @@ public class Pedido {
     public void setTxEntrega(double txEntrega){
         this.txEntrega = txEntrega;
     }
+
+    public double getTotal(){
+        return this.txEntrega + this.itensDoPedido.getValor();
+    }
     
     public void imprimir(){
         System.out.println("-----------------------------");
@@ -26,10 +30,11 @@ public class Pedido {
         System.out.println("-----------------------------");
         System.out.println("- Cliente    :" + this.cliente);
         System.out.println("-----------------------------");
-        System.out.println("Sabor       :");
+        System.out.println("Tipo:       " + this.itensDoPedido.getTipo());
+        System.out.println("Sabor  :" + this.itensDoPedido.getSabor());
         System.out.println("-----------------------------");
-        System.out.println("Tx:  Entrega  :" + this.txEntrega);
-        System.out.println("--------------------------------");
-        System.out.println("Total    : " + this.txEntrega + this.itensDoPedido.getValor());
+        System.out.println("- Tx  Entrega:" + this.txEntrega);
+        System.out.println("------------------------------");
+        System.out.println("Total    : " + getTotal());
     }
 }

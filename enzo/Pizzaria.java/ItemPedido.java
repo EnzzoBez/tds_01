@@ -15,4 +15,10 @@ public class ItemPedido {
     public double getValor(){
         return this.valor;
     }
+    public String getSabor(){
+        return this.sabor;
+    }
+    public String getTipo(){
+        return this.tipo;
+    }
 }
