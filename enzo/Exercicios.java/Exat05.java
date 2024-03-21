@@ -1,41 +1,26 @@
 import java.util.Scanner;
 
-public class Exat05{
+public class Exta05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Digite quantos números deseja verificar:");
-        int quantidadeNumeros = scanner.nextInt();
-        scanner.nextLine(); 
-        
-        System.out.println("Digite os números:");
-        for (int i = 0; i < quantidadeNumeros; i++) {
-            String numero = scanner.nextLine();
-            if (ehPalindromo(numero)) {
-                System.out.println(numero + " é um palíndromo.");
-            } else {
-                System.out.println(numero + " não é um palíndromo.");
-            }
+    
+        System.out.print("Digite o número de strings: ");
+        int numStrings = scanner.nextInt();
+        scanner.nextLine();
+    
+        for (int i = 1; i <= numStrings; i++) {
+            System.out.print("Digite a string " + i + ": ");
+            String str = scanner.nextLine();
+            String strInvertida = inverterString(str);
+            System.out.println("String invertida: " + strInvertida);
         }
-        
         scanner.close();
     }
-    
-    public static boolean ehPalindromo(String numero) {
-    
-        numero = numero.replaceAll("\\s+", "").toLowerCase();
-        
-        int inicio = 0;
-        int fim = numero.length() - 1;
-        
-        while (inicio < fim) {
-            if (numero.charAt(inicio) != numero.charAt(fim)) {
-                return false;
-            }
-            inicio++;
-            fim--;
+    private static String inverterString(String str) {
+        StringBuilder sc = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            sc.append(str.charAt(i));
         }
-        
-        return true;
+        return sc.toString();
     }
 }

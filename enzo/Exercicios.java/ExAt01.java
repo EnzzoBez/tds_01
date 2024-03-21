@@ -1,11 +1,12 @@
-public class ExAt01{
-    public static void main (String[] args){
-        double soma = 0;
-        for(int  i=0; i<args.length; i++){
-            soma += Double.parseDouble(args[i]);
-        
-        } 
-        System.out.println (soma);
-    } 
-}
+import java.util.Scanner;
 
+public class ExAt01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite um nome: ");
+        String nome = scanner.nextLine();
+        int numLetras = nome.length();
+        System.out.println("O nome '" + nome + "' possui " + numLetras + " letras.");
+        scanner.close();
+    }
+}

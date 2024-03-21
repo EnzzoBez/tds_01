@@ -3,12 +3,8 @@ import java.util.Scanner;
 public class Ex03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-       
         int numDisciplinas = 5;
         int numNotas = 4;
-
-        
         double[][] notas = new double[numDisciplinas][numNotas];
 
         for (int i = 0; i < numDisciplinas; i++) {
