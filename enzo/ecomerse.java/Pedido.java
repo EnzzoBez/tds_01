@@ -47,21 +47,20 @@ public class Pedido{
     }
 
     public void imprimir(){
-        System.out.println("----------------------------------------");
+       
         System.out.println("                 Ecomerse               ");
-        System.out.println("----------------------------------------");
         System.out.println(this.formatar("Cliente", this.cliente.getNome()));
         System.out.println(this.formatar("E-mail", this.cliente.getEmail()));
         System.out.println(this.formatar("Endereço", this.endereco));
         System.out.println(this.formatar("Data", this.data));
-        System.out.println("----------------------------------------");
+       
         for(int i = 0; i < this.produtos.size(); i++){
             System.out.println(this.formatar(this.produtos.get(i), String.valueOf(this.precos.get(i))));
         }
-        System.out.println("----------------------------------------");
+        
         System.out.println(this.formatar("Frete", String.valueOf(this.frete)));
         System.out.println(this.formatar("Total", String.valueOf(this.total + this.frete)));
-        System.out.println("----------------------------------------");
+        
     }
 
     private String formatar(String titulo, String item){

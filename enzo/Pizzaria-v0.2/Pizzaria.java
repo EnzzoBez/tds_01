@@ -24,6 +24,7 @@ public class Pizzaria {
             continuar = scanner.nextLine();
 
         } while (continuar.equalsIgnoreCase("y"));  
+
     
         System.out.print("Nome do cliente: ");
         pedido.setCliente(scanner.nextLine());
@@ -31,7 +32,7 @@ public class Pizzaria {
         System.out.print("Taxa de entrega: ");
         pedido.setTxEntrega(scanner.nextDouble());
         scanner.nextLine();
-        
+
         pedido.imprimir();
     }
 }
