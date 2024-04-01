@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private int id;
+    private List<ItemPedido> itensDoPedido = new ArrayList<>();
     private double txEntrega;
-    private ItemPedido itensDoPedido;
     private String cliente;
 
     public void adicionarItemPedido(ItemPedido item){
-        this.itensDoPedido = item;
+        itensDoPedido.add(item);
     }
 
     public void setCliente(String nome){
@@ -20,7 +19,11 @@ public class Pedido {
     }
 
     public double getTotal(){
-        return this.txEntrega + this.itensDoPedido.getValor();
+        double total = 0.0;
+        for (ItemPedido item : itensDoPedido) {
+            total += item.getValor();
+        }
+        return total + txEntrega;
     }
     
     public void imprimir(){
@@ -30,9 +33,11 @@ public class Pedido {
         System.out.println("-----------------------------");
         System.out.println("- Cliente    :" + this.cliente);
         System.out.println("-----------------------------");
-        System.out.println("Tipo:       " + this.itensDoPedido.getTipo());
-        System.out.println("Sabor  :" + this.itensDoPedido.getSabor());
-        System.out.println("-----------------------------");
+        for (ItemPedido item : itensDoPedido) {
+            System.out.println("Tipo:       " + item.getTipo());
+            System.out.println("Sabor  :" + item.getSabor());
+            System.out.println("-----------------------------");
+        }
         System.out.println("- Tx  Entrega:" + this.txEntrega);
         System.out.println("------------------------------");
         System.out.println("Total    : " + getTotal());
