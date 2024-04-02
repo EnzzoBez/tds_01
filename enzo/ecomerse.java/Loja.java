@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.Scanner;,
+import java.util.InputMismatchException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Loja{
@@ -9,7 +10,7 @@ public class Loja{
         Pedido pedido = new Pedido();
 
         LocalDateTime data = LocalDateTime.now();
-        DateTimeFormatter formatData = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter formatData = DateTimeFormatter.ofPattern();"dd-MM-yyyy HH:mm:ss";
         String dataFormatada = data.format(formatData);
         pedido.setData(dataFormatada);
 
@@ -31,17 +32,27 @@ public class Loja{
         String continuar;
         do{
             System.out.print("Produto: ");
-            produto.setNomeP(input.nextLine());
-
+            produto.setNomeE(input.nextLine());
             System.out.print("Preço: ");
             produto.setPreco(input.nextDouble());
+            try{
+                System.out.println("Digite o preço do produto");
+                produto.setPreco(Scanner.nextDouble());
+                Scanner.nextLine();
+
+                break;
+            } catch (InputMismatchException ex){
+                System.out.println("Preço inválido");
+                scanner.nextLine();
+            }    
+                
             input.nextLine();
 
             System.out.print("Descricao: ");
             produto.setDescricao(input.nextLine());
 
 
-            pedido.addProduto(produto.getNomeP());
+            pedido.addProduto(produto.getNomeE());
             pedido.addPrecos(produto.getPreco());
             pedido.addDescricoes(produto.getDescricao());
             pedido.setTotal(produto.getPreco());

@@ -1,10 +1,10 @@
 public class Produto{
-    private String nomeP;
+    private String nomeE;
     private double preco;
     private String descricao;
 
-    public void setNomeP(String nome){
-        this.nomeP = nome;
+    public void setNomeE(String nome){
+        this.nomeE = nome;
     }
 
     public void setPreco(double preco){
@@ -15,8 +15,8 @@ public class Produto{
         this.descricao = descricao;
     }
 
-    public String getNomeP(){
-        return this.nomeP;
+    public String getNomeE(){
+        return this.nomeE;
     }
 
     public double getPreco(){
