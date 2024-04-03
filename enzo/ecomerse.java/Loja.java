@@ -1,16 +1,17 @@
-import java.util.Scanner;,
+import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-public class Loja{
-    public static void main(String[] args){
+
+public class Loja {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Usuario usuario = new Usuario();
         Produto produto = new Produto();
         Pedido pedido = new Pedido();
 
         LocalDateTime data = LocalDateTime.now();
-        DateTimeFormatter formatData = DateTimeFormatter.ofPattern();"dd-MM-yyyy HH:mm:ss";
+        DateTimeFormatter formatData = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String dataFormatada = data.format(formatData);
         pedido.setData(dataFormatada);
 
@@ -30,27 +31,21 @@ public class Loja{
         pedido.setProduto(produto);
 
         String continuar;
-        do{
+        do {
             System.out.print("Produto: ");
             produto.setNomeE(input.nextLine());
             System.out.print("Preço: ");
-            produto.setPreco(input.nextDouble());
-            try{
-                System.out.println("Digite o preço do produto");
-                produto.setPreco(Scanner.nextDouble());
-                Scanner.nextLine();
-
+            try {
+                produto.setPreco(input.nextDouble());
+                input.nextLine();
                 break;
-            } catch (InputMismatchException ex){
+            } catch (InputMismatchException ex) {
                 System.out.println("Preço inválido");
-                scanner.nextLine();
-            }    
-                
-            input.nextLine();
+                input.nextLine();
+            }
 
             System.out.print("Descricao: ");
             produto.setDescricao(input.nextLine());
-
 
             pedido.addProduto(produto.getNomeE());
             pedido.addPrecos(produto.getPreco());
@@ -61,7 +56,7 @@ public class Loja{
             continuar = input.nextLine();
             System.out.println();
 
-        } while(!continuar.equalsIgnoreCase(""));
+        } while (!continuar.equalsIgnoreCase(""));
 
         System.out.print("Endereço: ");
         pedido.setEndereco(input.nextLine());
