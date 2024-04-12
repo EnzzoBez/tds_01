@@ -28,18 +28,18 @@ public class Pedido {
     
     public void imprimir(){
         System.out.println("-----------------------------");
-        System.out.println("            PIZZARIA        -");
-        System.out.println("-          QUASE PRONTA     -");
+        System.out.println("          PIZZARIA          -");
+        System.out.println("-       QUASE PRONTA        -");
         System.out.println("-----------------------------");
         System.out.println("- Cliente    :" + this.cliente);
         System.out.println("-----------------------------");
         for (ItemPedido item : itensDoPedido) {
             System.out.println("Tipo:       " + item.getTipo());
             System.out.println("Sabor  :" + item.getSabor());
-            System.out.println("-----------------------------");
+            System.out.println("-------------------------");
         }
         System.out.println("- Tx  Entrega:" + this.txEntrega);
-        System.out.println("------------------------------");
+        System.out.println("-----------------------------");
         System.out.println("Total    : " + getTotal());
     }
 }

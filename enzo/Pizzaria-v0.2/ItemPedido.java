@@ -9,9 +9,6 @@ public class ItemPedido {
     public void setSabor(String sabor){
         this.sabor = sabor;
     }
-    public void setValor(double valor){
-        this.valor = valor;
-    }
     public double getValor(){
         return this.valor;
     }

@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class Pizzaria {
     public static void main(String[] args) {
-        System.out.println("Bem vindo a pizzaria!!");
+        System.out.println("-------------------------");
+        System.out.println("-  Bem vindo a pizzaria -");
+        System.out.println("-     QUASE PRONTA      -");
+        System.out.println("-------------------------");
         Scanner scanner = new Scanner(System.in);
         Pedido pedido = new Pedido();
         String continuar = "y";
@@ -36,14 +39,6 @@ public class Pizzaria {
         scanner.nextLine();
         pedido.setTxEntrega(taxaEntrega);
 
-        double faturamentoLiquido = faturamentoTotal - taxaEntrega;
-
-        System.out.println("\nRelatório do Dia:");
-        System.out.println("Número de pizzas vendidas: " + numPizzasVendidas);
-        System.out.println("Valor a ser pago para o entregador: " + taxaEntrega);
-        System.out.println("Faturamento total: " + faturamentoTotal);
-        System.out.println("Faturamento líquido: " + faturamentoLiquido);
-
         boolean continuarFaturamento = true;
         while (continuarFaturamento) {
             System.out.println("\nMenu de Faturamento:");
@@ -74,6 +69,7 @@ public class Pizzaria {
                     break;
                 default:
                     System.out.println("Opção inválida. Por favor, escolha novamente.");
+
             }
         }
         
